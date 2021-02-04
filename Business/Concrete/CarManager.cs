@@ -14,9 +14,25 @@ namespace Business.Concrete
         {
             this.carDal = carDal;
         }
+
+        public void Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
           return  carDal.GetAll();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }
