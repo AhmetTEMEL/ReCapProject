@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,22 +16,27 @@ namespace Business.Concrete
             this.carDal = carDal;
         }
 
-        public void Add()
+        public void Add(Car car)
         {
-            throw new NotImplementedException();
+            carDal.Add(car);
         }
 
-        public void Delete()
+        public void Delete(Car car)
         {
-            throw new NotImplementedException();
+            carDal.Delete(car);
         }
 
-        public List<Car> GetAll()
+        public List<Car> Get()
         {
-          return  carDal.GetAll();
+            return carDal.GetAll();
         }
 
-        public void Update()
+        public List<Dto> GetCarDetails()
+        {
+            return carDal.GetListOfCarDetails();
+        }
+
+        public void Update(Car car)
         {
             throw new NotImplementedException();
         }
