@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.Dto;
@@ -16,29 +18,32 @@ namespace Business.Concrete
             this.carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
             carDal.Add(car);
+            return new SuccessResult(Messages.CarAdded);
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             carDal.Delete(car);
+            return new SuccessResult(Messages.CarDeleted);
         }
 
-        public List<Car> Get()
+        public IDataResult<List<Car>> Get()
         {
-            return carDal.GetAll();
+            return new SuccessDataResult<List<Car>>(carDal.GetAll(),Messages.CarsListed);
         }
 
-        public List<Dto> GetCarDetails()
+        public IDataResult<List<Dto>> GetCarDetails()
         {
-            return carDal.GetListOfCarDetails();
+            return new SuccessDataResult<List<Dto>>(carDal.GetListOfCarDetails(),Messages.CarDetailsListed);
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
-            throw new NotImplementedException();
+            carDal.Update(car);
+            return new SuccessResult(Messages.CarUpdated);
         }
     }
 }
