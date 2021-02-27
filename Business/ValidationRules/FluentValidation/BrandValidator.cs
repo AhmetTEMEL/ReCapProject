@@ -1,0 +1,18 @@
+﻿using Entities.Concrete;
+using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Business.ValidationRules.FluentValidation
+{
+    public class BrandValidator : AbstractValidator<Brand>
+    {
+        public BrandValidator()
+        {
+            RuleFor(p => p.Name).MinimumLength(2).WithMessage("En az iki karakter girilmedilir");
+            RuleFor(p => p.Name).NotEmpty();
+        }
+
+    }
+}
