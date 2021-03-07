@@ -11,7 +11,7 @@ namespace Business.ValidationRules.FluentValidation
         public BrandValidator()
         {
             RuleFor(p => p.Name).MinimumLength(2).WithMessage("En az iki karakter girilmedilir");
-            RuleFor(p => p.Name).NotEmpty();
+           // RuleFor(p => p.Name).NotEmpty();
         }
 
     }

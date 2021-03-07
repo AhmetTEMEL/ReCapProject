@@ -36,5 +36,6 @@ namespace Business.Constants
         public static string UserUpdated { get; internal set; }
         public static List<User> UsersListed { get; internal set; }
         public static object RentalAdditonRejected { get; internal set; }
+        public static string CarImageAdded = "Araba resmi yüklendi";
     }
 }

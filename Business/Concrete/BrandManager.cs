@@ -34,15 +34,15 @@ namespace Business.Concrete
             return new SuccessResult(Messages.BrandDeleted);
         }
 
+        public IDataResult<List<Brand>> Get()
+        {
+            return new SuccessDataResult<List<Brand>>(brandDal.GetAll(), Messages.CarsListed);
+        }
+
         public IResult Update(Brand brand)
         {
             brandDal.Update(brand);
             return new SuccessResult("Güncellendi");
-        }
-
-        IDataResult<List<Brand>> IBrandService.Get()
-        {
-            return new DataResult<List<Brand>>(brandDal.GetAll(),true,"Ürünler Listelendi");
         }
     }
 }

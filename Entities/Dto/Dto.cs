@@ -12,5 +12,7 @@ namespace Entities.Dto
         public string BrandName { get; set; }
         public string ColorNamme { get; set; }
         public double DailyPrice { get; set; }
+        public string ImagePath { get; set; }
+        public DateTime Date { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Business.Concrete
         }
 
         public IResult Add(Car car)
-        {
+        {           
             carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
         }
@@ -45,5 +45,6 @@ namespace Business.Concrete
             carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
         }
+
     }
 }
